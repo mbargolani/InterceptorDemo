@@ -12,7 +12,7 @@ namespace TestInterceptor
 
             method = invocation.InvocationTarget.GetType().
                 GetMethod(method.Name);
-
+           
             if (method != null)
             {
                 var attribute = method.GetCustomAttribute<MyLogAttribute>();

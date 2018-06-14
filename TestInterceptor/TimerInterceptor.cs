@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -24,13 +25,15 @@ namespace TestInterceptor
                 {
                     if (attribute != null)
                     {
+                        var sw = new Stopwatch();
+                        sw.Start();
                         Console.WriteLine("Starting the log in Timer Interceptor");
 
 
                         invocation.Proceed();
 
-
-                        Console.WriteLine("Ending the log");
+                        sw.Stop();
+                        Console.WriteLine($"Ending the log, ellapsed: {sw.ElapsedMilliseconds} ms");
                     }
                     else
                         invocation.Proceed();

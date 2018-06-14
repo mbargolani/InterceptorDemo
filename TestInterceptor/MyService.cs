@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestInterceptor
 {
+    /// <summary>
+    /// Implementation of IMyService
+    /// Has three methods, one with MyLog attribute
+    /// Another with MyTimer attribute and the last without any attribute and it throws an exception
+    /// </summary>
     public class MyService : IMyService
     {
         public void DoStuff()
@@ -26,6 +27,9 @@ namespace TestInterceptor
         }
     }
 
+    /// <summary>
+    /// Interface for the MyService
+    /// </summary>
     public interface IMyService
     {
         void DoStuff();
