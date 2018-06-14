@@ -10,7 +10,7 @@ namespace TestInterceptor
     {
         public void DoStuff()
         {
-            throw new NotImplementedException();
+            throw new Exception("Throwing exception here");
         }
 
         [MyLog]
